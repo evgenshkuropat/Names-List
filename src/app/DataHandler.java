@@ -1,8 +1,12 @@
 package app;
 
+import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class DataHandler {
 
+    // Метод для формування виведення імені за певним індексом
+    public String formOutput(List<String> list, int index) {
         try {
             String name = list.get(index); // Отримуємо ім'я за індексом
             return "Name: " + name + " is in index " + index;
@@ -21,6 +25,6 @@ public class DataHandler {
             sb.append(String.format("%d) %s%n", count.getAndIncrement(), name));
         }
 
-        return "\nNames:\n" + sb.toString(); // Результат
+        return "\nNames:\n" + sb.toString(); // Формуємо результат
     }
 }
